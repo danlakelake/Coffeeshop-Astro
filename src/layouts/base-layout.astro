@@ -1,6 +1,35 @@
 ---
-import '../styles/global.css';
+import '@/styles/global.css';
+import Header from '@/components/ui/header.astro';
+import Footer from '@/components/ui/footer.astro';
+
+// Set Props
+interface Props {
+  title: string;
+  subtitle: string;
+  bgImage: string;
+}
+
+// Get Props
+const { title, subtitle, bgImage } = Astro.props;
 ---
 
-<h1>Header</h1>
-<slot />
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cafetería desde 1990: {title}</title>
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" href="favicon.ico" type="image/svg+xml" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-coffee-100">
+    <Header bgImage={bgImage} subtitle={subtitle} />
+    <slot />
+    <Footer />
+  </body>
+</html>
