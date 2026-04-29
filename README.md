@@ -2,7 +2,7 @@
 
 > 🚧 Proyecto en desarrollo (Work in Progress)
 
-🌐 **Live Demo:** https://lively-tiramisu-79303c.netlify.app/
+🌐 **Live Demo:** [Ver sitio](https://lively-tiramisu-79303c.netlify.app/)
 
 Proyecto desarrollado con **Astro + Tailwind CSS** utilizando **WordPress como Headless CMS** para la gestión de contenido.
 
