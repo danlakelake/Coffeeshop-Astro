@@ -1,0 +1,11 @@
+---
+import { PostsSchema } from '@/types';
+import PostCard from './postCard.astro';
+const API_URL = import.meta.env.PUBLIC_WORDPRESS_API;
+const url = `${API_URL}/posts`;
+const res = await fetch(url);
+const json = await res.json();
+const data = PostsSchema.parse(json);
+---
+
+{data.map((post) => <PostCard post={post} />)}

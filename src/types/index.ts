@@ -1,4 +1,4 @@
-import { z } from "astro:content";
+import { z } from "zod";
 
 const imageSchema = z.object({
     url: z.string(),
@@ -27,3 +27,33 @@ export const BaseWPSchema = z.object({
         subtitle: z.string()
     })
 });
+
+const processSchema = z.object({
+    title: z.string(),
+    description: z.string(),
+    image: z.string()
+});
+
+export const ProcessPageSchema = BaseWPSchema.extend({
+    acf: z.object({
+        subtitle: z.string(),
+    }).catchall(processSchema)
+})
+
+const CategorySchema = z.object({
+    name: z.string(),
+    slug: z.string()
+})
+
+const CategoriesSchema = z.array(CategorySchema)
+
+export const PostSchema = BaseWPSchema.omit({
+    acf: true
+}).extend({
+    date:z.string(),
+    category_details: CategoriesSchema
+})
+
+export const PostsSchema = z.array(PostSchema)
+
+export type Post = z.infer<typeof PostSchema>
