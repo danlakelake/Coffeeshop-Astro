@@ -1,0 +1,14 @@
+---
+import GalleryGrid from '@/components/gallery/gallery_grid.astro';
+import Layout from '../layouts/base-layout.astro';
+import { GalleryPageSchema } from '@/types';
+const API_URL = import.meta.env.PUBLIC_WORDPRESS_API;
+const url = `${API_URL}/pages?slug=galeria`;
+const res = await fetch(url);
+const json = await res.json();
+const data = GalleryPageSchema.parse(json[0]);
+---
+
+<Layout title={data.title.rendered} subtitle={data.acf.subtitle} bgImage={data.featured_images.full.url}>
+  <GalleryGrid gallery={data.gallery} />
+</Layout>
