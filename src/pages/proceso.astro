@@ -11,8 +11,15 @@ const data = ProcessPageSchema.parse(json[0]);
 const processKeys = Array.from({ length: 5 }, (_, i) => `process_${i + 1}`);
 ---
 
-<Layout title={data.title.rendered} subtitle={data.acf.subtitle} bgImage={data.featured_images.full.url}>
-  <div set:html={data.content.rendered} class="text-xl space-y-3 mt-10 lg:mt-0" />
+<Layout
+  title={data.title.rendered}
+  subtitle={data.acf.subtitle}
+  bgImage={data.featured_images.full.url}
+>
+  <div
+    set:html={data.content.rendered}
+    class="text-xl space-y-3 mt-10 lg:mt-0"
+  />
 
   <div class="mt-10 space-y-10">
     {
@@ -22,11 +29,25 @@ const processKeys = Array.from({ length: 5 }, (_, i) => `process_${i + 1}`);
 
         return (
           <section class="flex flex-col lg:flex-row lg:items-center gap-10">
-            <div class={`w-full lg:w-1/2 ${i % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
-              <Picture src={image} alt={`Imagen de ${data.title.rendered}`} width={width} height={height} />
+            <div
+              class={`w-full lg:w-1/2 bg-coffee-950 p-3 ${
+                i % 2 === 0 ? '-rotate-2 lg:order-1' : 'rotate-2 lg:order-2'
+              }`}
+            >
+              <Picture
+                src={image}
+                alt={`Imagen de ${data.title.rendered}`}
+                width={width}
+                height={height}
+                class="rounded-xl"
+              />
             </div>
-            <div class={`w-full lg:w-1/2 ${i % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
-              <h3 class="text-coffee-900 font-black text-4xl pb-10 uppercase">{title}</h3>
+            <div
+              class={`w-full lg:w-1/2 ${i % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}
+            >
+              <h3 class="text-coffee-900 font-black text-4xl pb-10 uppercase">
+                {title}
+              </h3>
               <p class="text-lg">{description}</p>
             </div>
           </section>
