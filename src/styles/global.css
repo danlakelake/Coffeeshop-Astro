@@ -34,3 +34,8 @@
   display: block;
   margin-inline: auto;
 }
+
+/* Bg Menu Image */
+@utility bg-menu-image {
+  background-image: url(../assets/menu_artwork.svg);
+}
