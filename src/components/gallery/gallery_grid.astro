@@ -3,14 +3,17 @@ import { Picture } from 'astro:assets';
 import type { Gallery } from '@/types';
 interface Props {
   gallery: Gallery[];
+  background?: boolean;
 }
 
 const { gallery } = Astro.props;
+const { background = false } = Astro.props;
 ---
 
 <div
   id="gallery"
-  class="grid grid-cols-1 lg:grid-cols-3 gap-5 bg-coffee-950 p-5"
+  class="grid grid-cols-1 lg:grid-cols-3 gap-5 p-5"
+  class:list={['gallery', background && 'bg-coffee-900']}
 >
   {
     gallery.map((image) => {

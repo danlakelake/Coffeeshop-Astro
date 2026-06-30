@@ -1,5 +1,6 @@
 ---
 const navigation = [
+  { name: 'Inicio', href: '/' },
   { name: 'Nosotros', href: '/nosotros/' },
   { name: 'Blog', href: '/blog/' },
   { name: 'Proceso', href: '/proceso/' },
@@ -7,12 +8,25 @@ const navigation = [
   { name: 'Galería', href: '/galeria/' },
   { name: 'Contacto', href: '/contacto/' },
 ];
+
+const currentPath = Astro.url.pathname;
+console.log(currentPath);
+
+const isActive = (href: string) => {
+  if (href === '/') {
+    return currentPath === '/';
+  }
+  return currentPath.startsWith(href);
+};
 ---
 
 <nav class="flex flex-col lg:flex-row gap-4 items-center">
   {
     navigation.map((item) => (
-      <a class="uppercase text-lg font-bold text-white" href={item.href}>
+      <a
+        href={item.href}
+        class={`${isActive(item.href) ? 'text-coffee-400' : 'text-white hover:text-coffee-400'} uppercase text-lg font-bold`}
+      >
         {item.name}
       </a>
     ))
