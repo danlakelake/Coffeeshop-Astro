@@ -26,3 +26,6 @@ pnpm-debug.log*
 # vscode workspace settings
 .vscode/*
 !.vscode/extensions.json
+
+# Netlify build artifacts
+.netlify/

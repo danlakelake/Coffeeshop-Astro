@@ -25,9 +25,6 @@ const data = BaseWPSchema.parse(json[0]);
         class="rounded-2xl"
       />
     </div>
-    <div
-      set:html={data.content.rendered}
-      class="text-xl space-y-3 mt-10 lg:mt-0"
-    />
+    <div set:html={data.content.rendered} class="text-xl space-y-3 mt-0" />
   </div>
 </Layout>

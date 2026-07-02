@@ -30,13 +30,16 @@ const data = MenuItemsSchema.parse(json);
   import PhotoSwipeLightbox from 'photoswipe/lightbox';
   import 'photoswipe/style.css';
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const lightbox = new PhotoSwipeLightbox({
-      gallery: '#food-menu',
-      children: 'a',
-      pswpModule: () => import('photoswipe'),
-    });
-
-    lightbox.init();
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '#food-menu',
+    children: 'a',
+    pswpModule: () => import('photoswipe'),
   });
+
+  function initPhotoSwipe() {
+    lightbox.init();
+  }
+
+  document.addEventListener('DOMContentLoaded', initPhotoSwipe);
+  document.addEventListener('astro:after-swap', initPhotoSwipe);
 </script>

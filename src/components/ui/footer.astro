@@ -3,7 +3,9 @@ import FooterBox from './footer-box.astro';
 ---
 
 <footer class="bg-coffee-900 pt-20">
-  <div class="max-w-7xl mx-auto mt-10 grid grid-cols-1 lg:grid-cols-3 gap-5">
+  <div
+    class="max-w-7xl mx-auto mt-0 lg:mt-10 grid grid-cols-1 lg:grid-cols-3 gap-5"
+  >
     <FooterBox heading="Ubicación">
       <p>Coffee Street #39</p>
       <p>Londres, UK</p>
@@ -18,5 +20,9 @@ import FooterBox from './footer-box.astro';
       <p>Domingo: Cerrado</p>
     </FooterBox>
   </div>
-  <p class="py-10 text-center text-white text-sm">Todos los derechos reservados. La Cafetería1939. &copy; {new Date().getFullYear()}</p>
+  <p class="py-10 text-center text-white text-sm">
+    Todos los derechos reservados. La Cafetería1939. &copy; {
+      new Date().getFullYear()
+    }
+  </p>
 </footer>

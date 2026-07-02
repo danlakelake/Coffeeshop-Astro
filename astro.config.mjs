@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import netlify from '@astrojs/netlify';
 import tailwindcss from '@tailwindcss/vite';
 
 // WordPress Environment Variables
@@ -11,7 +12,10 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+
   image: {
-    domains: [WORDPRESS_DOMAIN],
+    domains: [WORDPRESS_DOMAIN, 'coffeecms.danielaguilardev.com'],
   },
+
+  adapter: netlify(),
 });
