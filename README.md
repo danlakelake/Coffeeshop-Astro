@@ -1,54 +1,60 @@
 # ☕ CoffeeShop Astro
 
-> 🚧 Proyecto en desarrollo (Work in Progress)
-
-🌐 **Live Demo:** [Ver sitio](https://lively-tiramisu-79303c.netlify.app/)
+🌐 **Live Demo:** [Ver sitio](https://coffeeshop.danielaguilardev.com/)
 
 Proyecto desarrollado con **Astro + Tailwind CSS** utilizando **WordPress como Headless CMS** para la gestión de contenido.
 
-# Astro Starter Kit: Basics
+## 🛠 Tech Stack
 
-```sh
-npm create astro@latest -- --template basics
-```
+### Frontend
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- Astro
+- TypeScript
+- Tailwind CSS
+- PhotoSwipe
 
-## 🚀 Project Structure
+### Backend
 
-Inside of your Astro project, you'll see the following folders and files:
+- WordPress
+- WordPress REST API
+
+### Deployment
+
+- Netlify
+- GitHub
+
+## 🏗️ Architecture
 
 ```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+
+                 Content Management
+
+                WordPress (CMS)
+
+                       │
+
+              WordPress REST API
+
+                       │
+
+                       ▼
+
+                Astro Frontend
+
+                       │
+
+               Static Site Generation
+
+                       │
+
+                       ▼
+
+                  Netlify Hosting
+
+                       │
+
+                       ▼
+
+     coffeeshop.danielaguilardev.com
+
 ```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
