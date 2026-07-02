@@ -27,7 +27,7 @@ Proyecto desarrollado con **Astro + Tailwind CSS** utilizando **WordPress como H
 
 ```text
 
-                 Content Management
+               Content Management
 
                 WordPress (CMS)
 
@@ -55,6 +55,6 @@ Proyecto desarrollado con **Astro + Tailwind CSS** utilizando **WordPress como H
 
                        ▼
 
-     coffeeshop.danielaguilardev.com
+        coffeeshop.danielaguilardev.com
 
 ```
