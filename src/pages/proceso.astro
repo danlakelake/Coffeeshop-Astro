@@ -2,7 +2,7 @@
 import Layout from '../layouts/base-layout.astro';
 import { Picture, inferRemoteSize } from 'astro:assets';
 import { ProcessPageSchema } from '@/types';
-const API_URL = import.meta.env.PUBLIC_WORDPRESS_API;
+const API_URL = import.meta.env.WORDPRESS_API;
 const url = `${API_URL}/pages?slug=proceso`;
 const res = await fetch(url);
 const json = await res.json();

@@ -3,7 +3,7 @@ import { Picture } from 'astro:assets';
 import Layout from '../layouts/base-layout.astro';
 import { BaseWPSchema } from '@/types';
 import ProductsMenu from '@/components/menu/productsMenu.astro';
-const API_URL = import.meta.env.PUBLIC_WORDPRESS_API;
+const API_URL = import.meta.env.WORDPRESS_API;
 const url = `${API_URL}/pages?slug=menu`;
 const res = await fetch(url);
 const json = await res.json();

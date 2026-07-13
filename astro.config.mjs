@@ -4,7 +4,7 @@ import netlify from '@astrojs/netlify';
 import tailwindcss from '@tailwindcss/vite';
 
 // WordPress Environment Variables
-const WORDPRESS_URL = import.meta.env.PUBLIC_WORDPRESS_API;
+const WORDPRESS_URL = import.meta.env.WORDPRESS_API;
 const WORDPRESS_DOMAIN = WORDPRESS_URL ? new URL(WORDPRESS_URL).hostname : '';
 
 // https://astro.build/config
@@ -17,5 +17,10 @@ export default defineConfig({
     domains: [WORDPRESS_DOMAIN, 'coffeecms.danielaguilardev.com'],
   },
 
-  adapter: netlify(),
+  adapter: netlify({
+    devFeatures: {
+      environmentVariables: true,
+      images: false,
+    },
+  }),
 });

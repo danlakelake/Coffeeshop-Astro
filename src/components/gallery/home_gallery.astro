@@ -1,7 +1,7 @@
 ---
 import GalleryGrid from '@/components/gallery/gallery_grid.astro';
 import { GalleryPageSchema } from '@/types';
-const API_URL = import.meta.env.PUBLIC_WORDPRESS_API;
+const API_URL = import.meta.env.WORDPRESS_API;
 const url = `${API_URL}/pages?slug=galeria`;
 const res = await fetch(url);
 const json = await res.json();

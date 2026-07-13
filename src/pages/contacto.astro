@@ -3,7 +3,7 @@ import LocationMap from '@/components/contact/locationMap.astro';
 import ContactForm from '@/components/contact/contactForm.astro';
 import Layout from '../layouts/base-layout.astro';
 import { ContactPageSchema } from '@/types';
-const API_URL = import.meta.env.PUBLIC_WORDPRESS_API;
+const API_URL = import.meta.env.WORDPRESS_API;
 const url = `${API_URL}/pages?slug=contacto`;
 const res = await fetch(url);
 const json = await res.json();

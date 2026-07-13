@@ -2,7 +2,7 @@
 import { Picture } from 'astro:assets';
 import Layout from '../layouts/base-layout.astro';
 import { BaseWPSchema } from '@/types';
-const API_URL = import.meta.env.PUBLIC_WORDPRESS_API;
+const API_URL = import.meta.env.WORDPRESS_API;
 const url = `${API_URL}/pages?slug=nosotros`;
 const res = await fetch(url);
 const json = await res.json();

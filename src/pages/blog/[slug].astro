@@ -8,7 +8,7 @@ import { Picture } from 'astro:assets';
 export const prerender = false;
 
 const { slug } = Astro.params;
-const res = await fetch(`${import.meta.env.PUBLIC_WORDPRESS_API}/posts?slug=${slug}`);
+const res = await fetch(`${import.meta.env.WORDPRESS_API}/posts?slug=${slug}`);
 console.log(res);
 
 const json = await res.json();
@@ -21,10 +21,18 @@ if (!post.success) {
 const { title, featured_images, date, category_details, content } = post.data;
 ---
 
-<Layout title={title.rendered} subtitle={title.rendered} bgImage={featured_images.full.url}>
+<Layout
+  title={title.rendered}
+  subtitle={title.rendered}
+  bgImage={featured_images.full.url}
+>
   <article class="space-y-5 max-w-4xl mx-auto">
     <PostMeta date={date} />
-    {category_details.map((cat) => <PostCategories name={cat.name} slug={cat.slug} />)}
+    {
+      category_details.map((cat) => (
+        <PostCategories name={cat.name} slug={cat.slug} />
+      ))
+    }
     <Picture
       src={featured_images.full.url}
       alt={`Imagen del Post: ${title.rendered}`}
