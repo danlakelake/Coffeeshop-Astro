@@ -55,6 +55,6 @@ Proyecto desarrollado con **Astro + Tailwind CSS** utilizando **WordPress como H
 
                        ▼
 
-        coffeeshop.danielaguilardev.com
+                   Production
 
 ```
